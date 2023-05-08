@@ -3,8 +3,9 @@
 This is a web application built using React.js, Tailwind CSS, Axios,Framer motion, React Icons, React Spinner, and The Movie DB API. The app allows users to search for movies
 
 ## Screenshots
-![App Screenshot](./mobile.png)
-![App Screenshot](./screenshot.gif)
+![App Screenshot](./mobile.png)   
+![App Screenshot](./login.png)
+
 
 
 ## Features
