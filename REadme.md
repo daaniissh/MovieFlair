@@ -43,6 +43,6 @@ _API_KEY_ variable set your API key. Once the dependencies have been installed a
 Clone the repository : https://github.com/daaniissh/MovieFlair.git
 
 ```bash
-  npm install my-project
+  git clone https://github.com/daaniissh/MovieFlair.git
   cd my-project
 ```
