@@ -1,14 +1,10 @@
 # MovieFlair App
 
-MovieFlair is a web application built using React.js, Tailwind CSS, Axios, React Icons, and React Spinner. It leverages the power of the TMDb (The Movie Database) API to provide users with a comprehensive platform to explore movies and TV shows.
+This is a web application built using React.js, Tailwind CSS, Axios,Framer motion, React Icons, React Spinner, and The Movie DB API. The app allows users to search for movies
 
 ## Screenshots
 
 ![App Screenshot](./screenshot.gif)
-
-# Movie Finder App
-
-This is a web application built using React.js, Tailwind CSS, Axios, React Icons, React Spinner, and The Movie DB API. The app allows users to search for movies
 
 ## Features
 
@@ -16,6 +12,7 @@ This is a web application built using React.js, Tailwind CSS, Axios, React Icons
 - Filter search results by popularity, rating, and release date
 - Display of loading spinner while data is being fetched
 - Responsive design using Tailwind CSS
+- Better animation using Framer motion
 
 ## Technologies Used
 
@@ -24,9 +21,10 @@ This is a web application built using React.js, Tailwind CSS, Axios, React Icons
 - Axios
 - React Icons
 - React Spinner
+- Framer Motion
 - The Movie DB API
 
-Open your browser and visit `http://localhost:3000` to access the application.
+Open your browser and visit `https://b2jz31-5173.csb.app/` to access the application.
 
 ## Acknowledgments
 
