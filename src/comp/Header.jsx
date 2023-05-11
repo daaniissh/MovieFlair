@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { memo, useContext, useEffect, useState } from 'react'
 import Logo from '../assets/mainIcon.png'
 import AnimatePage from '../animation/AnimatePage'
 import { MdLogout } from "react-icons/md";
@@ -7,14 +7,14 @@ import { useNavigate } from 'react-router-dom';
 import { AlertContext } from '../contaxt/alertContext';
 const Header = ({ logoutButton, marginRight }) => {
   const navigate = useNavigate();
-  const { openHandler } = useContext(AlertContext)
+  const { openHandler, setOpen } = useContext(AlertContext)
   let mr = marginRight
   const [drop, setDrop] = useState(false)
   const [userData, setUserData] = useState(localStorage.getItem('userData'))
   const data = JSON.parse(userData);
   const [darkMode, setDarkMode] = useState(false);
 
-  
+
   const toggleDarkMode = () => {
     console.log(darkMode);
     const newDarkMode = !darkMode;
@@ -52,7 +52,7 @@ const Header = ({ logoutButton, marginRight }) => {
               {logoutButton && <div className="hover:bg-[#e6e6e6f8] select-none  flex gap-2 rounded-xl text-black font-main dark:bg-gray-300 bg-white p-[10px] flex-row  ml-[10px] items-center">
                 <h4 className='hidden sm:block select-none '>{data.username}</h4>
 
-                <label htmlFor="" onClick={openHandler} >  <MdLogout title='Logout' className="" /></label>
+                <label htmlFor="" onClick={() => setOpen(true)} >  <MdLogout title='Logout' className="" /></label>
                 {/* <label className="btn"></label> */}
 
 
@@ -68,4 +68,4 @@ const Header = ({ logoutButton, marginRight }) => {
   )
 }
 
-export default Header
+export default memo(Header)

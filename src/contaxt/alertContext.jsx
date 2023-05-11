@@ -1,14 +1,15 @@
-import { createContext, useState } from "react"
+import { createContext, useContext, useState } from "react"
 
 export const AlertContext = createContext()
-export const AlertProvider = ({children})=>{
-  const [open,setOpen] = useState(false)
-  const openHandler = ()=>{
-    setOpen(true)
-  }
-return(
-  <AlertContext.Provider value={{open,setOpen,openHandler}} >
+export const AlertProvider = ({ children }) => {
+  const [open, setOpen] = useState(false)
+  return (
+    <AlertContext.Provider value={{ open, setOpen }} >
       {children}
-  </AlertContext.Provider>
-)
+    </AlertContext.Provider>
+  )
+}
+
+export const useOpen = () => {
+  return useContext(AlertContext)
 }

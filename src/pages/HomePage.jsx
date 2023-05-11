@@ -6,16 +6,18 @@ import Banner from '../assets/banner.png'
 import AnimatePage from '../animation/AnimatePage'
 import Alert from '../comp/Alert'
 import { AlertContext } from '../contaxt/alertContext'
+import { useOpen } from '../contaxt/alertContext'
 import axios from 'axios'
 import Spinner from '../comp/Spinner'
 import SearchList from './SearchList'
+import { useDebounce } from '../hooks/useDebouncy'
 const HomePage = () => {
   const [searchInputValue, setSearchInputValue] = useState("");
   const [loading, setLoader] = useState(false);
   const [title, setTile] = useState(false);
   const [searchList, setSearchList] = useState([]);
   const [movie, setMovie] = useState([]);
-  const { open } = useContext(AlertContext)
+  const { open } = useOpen()
   const API_URL =
     "https://api.themoviedb.org/3/search/movie?api_key=64fce4404d5da5e36af21589af67c971&language=en-US&page=1&include_adult=false";
   const API_URL2 =
@@ -80,22 +82,14 @@ const HomePage = () => {
 
     }
   };
-  useEffect(() => {
-    fetchMovieData()
-  }, [])
 
-  useEffect(() => {
+  useDebounce(fetchSearchList,[searchInputValue])
+ useEffect(() => {
+  fetchMovieData()
+ }, [])
+ 
 
-    const timeout = setTimeout(() => {
-      if (searchInputValue) {
-        fetchSearchList();
-      }
-    }, 300);
 
-    return () => {
-      clearTimeout(timeout);
-    };
-  }, [searchInputValue]);
 
 
   return (

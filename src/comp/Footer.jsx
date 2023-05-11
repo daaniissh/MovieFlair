@@ -2,10 +2,10 @@ import React from 'react';
 import { FaBeer, FaFacebookSquare, FaGlobe, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import AnimatePage from '../animation/AnimatePage';
 
-const Footer = ({whichComp}) => {
+const Footer = ({ whichComp }) => {
   return (
     <>
-      <footer className={'dark:bg-gray-700/90 bg-[#000000de] dark:text-white m-auto w-full h-[200px] lg:h-[200px]' }>
+      <footer className={'dark:bg-gray-700/90 bg-[#000000de] dark:text-white m-auto w-full h-[200px] lg:h-[200px]'}>
         <AnimatePage initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
           <div className="flex justify-center  w-full ">
             <div className="h-full ml-2 md:w-1/2 ">

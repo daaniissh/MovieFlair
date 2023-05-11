@@ -1,14 +1,14 @@
 import React from 'react'
-import { MutatingDots  } from 'react-loader-spinner'
+import { MutatingDots } from 'react-loader-spinner'
 
 function Spinner() {
   return (
     <div className=' absolute top-0 left-0 w-full h-screen flex justify-center items-center flex-row'>
-      <MutatingDots 
+      <MutatingDots
         height="100"
         width="100"
         color="#fff"
-        secondaryColor= '#eee'
+        secondaryColor='#eee'
         radius='12.5'
         ariaLabel="mutating-dots-loading"
         wrapperStyle={{}}
