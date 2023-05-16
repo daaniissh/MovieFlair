@@ -5,6 +5,10 @@ import HomePage from './pages/HomePage';
 import { BrowserRouter, Routes, Route, Navigate, Outlet } from 'react-router-dom';
 import Alert from './comp/Alert';
 import ProtectedRoute from './ProtectRouter';
+import SignUp from './pages/Signup';
+// import ForPass from './pages/ForgotPassword';
+import ForgotPassword from './pages/ForgotPassword';
+import ProtectedRouterAfterLogIn from './ProtuctRouterLogin';
 
 function App() {
 
@@ -26,11 +30,20 @@ function App() {
 
       <BrowserRouter>
         <Routes>
-        <Route element={<ProtectedRoute />}>
-          <Route path="/" element={<HomePage />} />
-         
-        </Route>
+          <Route element={<ProtectedRouterAfterLogIn />}>
+            {/* <Route path="/" element={<LoginPage />} /> */}
+            <Route path="/login" element={<LoginPage />} />
+
+          </Route>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/" element={<HomePage />} exact />
+
+          </Route>
+
+          <Route path="/forgotpassword" element={<ForgotPassword />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUp />} />
+
         </Routes>
       </BrowserRouter>
     </div>

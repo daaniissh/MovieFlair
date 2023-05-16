@@ -83,25 +83,22 @@ const HomePage = () => {
     }
   };
 
-  useDebounce(fetchSearchList,[searchInputValue])
- useEffect(() => {
-  fetchMovieData()
- }, [])
- 
-
-
+  useDebounce(fetchSearchList, [searchInputValue])
+  useEffect(() => {
+    fetchMovieData()
+  }, [])
 
 
   return (
     <>
       <Header logoutButton={true} marginRight="150px" />
       {open && <Alert />}
-      <div className="flex flex-col w-full h-[250vh] dark:bg-white/40 bg-[#000]/50">
+      <div className="flex flex-col w-full h-[200vh] 2xl:h-[100vh] dark:bg-white/40 bg-[#000]/50">
         <AnimatePage initial={{ opacity: 0, y: 100 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -100 }} >
           <div className="mt-[110px] flex justify-center w-full">
-            <div className="relative w-[300px] sm:w-[500px] md:w-[846px] ">
+            <div className="relative w-[300px] sm:w-[500px] md:w-[720px] lg:w-[846px] ">
               <FaSearch className='absolute top-3  left-5 dark:text-white text-black ' />
-              <input value={searchInputValue} onChange={handleChange} type="text" className='font-main font-normal dark:bg-slate-700 dark:text-white text-black w-full pl-[45px] py-[10px] rounded-[20px] outline-none' placeholder='Search movies' />
+              <input value={searchInputValue} onChange={handleChange} type="text" className='font-main font-normal  dark:bg-slate-700 dark:text-white text-black w-full pl-[45px] py-[10px] rounded-[20px] outline-none' placeholder='Search movies' />
               {searchInputValue && <span onClick={clearSearch} className=' absolute top-[10px] font-bold cursor-pointer text-[16px] right-5 dark:text-white text-black' >✖</span>}
             </div>
           </div>

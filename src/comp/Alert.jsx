@@ -3,15 +3,18 @@ import { AlertContext } from '../contaxt/alertContext';
 import { useNavigate } from 'react-router-dom';
 // import AnimatePage from '../animation/AnimatePage';
 import { motion } from 'framer-motion'
+// import { FaLessThanEqual } from 'react-icons/fa';
 
 const Alert = () => {
+  const { setOpen } = useContext(AlertContext)
+
   const navigate = useNavigate()
   const handleLogout = () => {
     localStorage.removeItem("login")
     localStorage.removeItem('userData');
+    setOpen(false)
     navigate('/login')
   }
-  const { setOpen } = useContext(AlertContext)
   return (
     <motion.div initial={{ opacity: 0, scale: 0 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0 }} className="alert shadow-lg dark:bg-slate-500 dark:font-semibold dark:text-black absolute bg-stone-900 z-[9999]  w-[200px] sm:w-[500px] right-10 bottom-10">
       <div>
