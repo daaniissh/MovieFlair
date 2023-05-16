@@ -44,7 +44,7 @@ const navigate  = useNavigate()
 
             <h2 className='font-roboto font-bold text-[20px] sm:text-[32px] mb-[10px] md:mb-[25px] leading-[38px]' >Change password</h2>
 
-            <input onChange={handleChange} value={values.email} placeholder='Username' className='bg-[#333333] dark:text-black dark:bg-gray-300 text-[#8C8C8C] font-roboto p-2 sm:p-3 text-[15px] outline-none rounded-[5px] mb-[10px]' type="email" name="email" id="" />
+            <input onChange={handleChange} value={values.email} placeholder='Email' className='bg-[#333333] dark:text-black dark:bg-gray-300 text-[#8C8C8C] font-roboto p-2 sm:p-3 text-[15px] outline-none rounded-[5px] mb-[10px]' type="email" name="email" id="" />
 
             {error && <span className='text-[14px] mb-1 text-red-700' >{error.email}</span>}
 
